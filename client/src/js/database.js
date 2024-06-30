@@ -17,11 +17,11 @@ const initdb = async () =>
     const contactDb = await openDB('jate', 1);
     const tx = contactDb.transaction('jate', 'readwrite');
     const store = tx.objectStore('jate');
-    const request = store.put({ id: 1, value: content });
+    const request = store.put({ value: content }); 
   
     // Get confirmation of the request.
     const result = await request;
-    console.log('🚀 - data saved to the database', result);
+    console.log('data saved to the database', result);
   };
   
   // TODO: Add logic for a method that gets all the content from the database
