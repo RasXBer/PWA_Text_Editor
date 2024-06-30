@@ -12,7 +12,8 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+      editor: './src/js/editor.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -28,7 +29,7 @@ module.exports = () => {
     // Injects our custom servie worker
     new InjectManifest({
       swSrc: './src-sw.js',
-      swDest: './src-sw.js',
+      swDest: 'src-sw.js',
     }),
     // Creates a manifest.json file.
     new WebpackPwaManifest({
