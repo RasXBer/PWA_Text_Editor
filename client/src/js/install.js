@@ -10,10 +10,8 @@ window.addEventListener('beforeinstallprompt', (event) => {
 });
 
 
-butInstall.addEventListener('click', async () => {
-  
+butInstall.addEventListener('click', async () => {  
   const promptEvent = window.deferredPrompt;
-
   if (!promptEvent) {
    return;
   }
@@ -22,8 +20,7 @@ butInstall.addEventListener('click', async () => {
   promptEvent.prompt();
   
   // Reset the deferred prompt variable, it can only be used once.
-  window.deferredPrompt = null;
-  
+  window.deferredPrompt = null;  
   butInstall.classList.toggle('hidden', true);
 });
 
